@@ -39,6 +39,9 @@ const noteFrequency = noteOffset => C0 * Math.pow(2, octave + noteOffset / 12);
 
 const oscillatorMap = {};
 const audioContext = new AudioContext();
+const gain = audioContext.createGain();
+gain.gain.value = 0.2;
+gain.connect(audioContext.destination);
 
 const playNote = (noteOffset) => {
   if (!(noteOffset in oscillatorMap)) {
@@ -47,7 +50,7 @@ const playNote = (noteOffset) => {
     const osc = audioContext.createOscillator();
     osc.type = 'triangle';
     osc.frequency.setValueAtTime(freq, audioContext.currentTime);
-    osc.connect(audioContext.destination);
+    osc.connect(gain);
     osc.start();
     oscillatorMap[noteOffset] = osc;
 
