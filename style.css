@@ -1,0 +1,97 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 50px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.keyboard {
+  width: 100%;
+  height: 300px;
+
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+}
+
+.key {
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.key.natural {
+  bottom: 0;
+  border: 3px solid #888;
+  background: white;
+  height: 100%;
+  width: calc(100% / 8);
+}
+.key.natural.pressed {
+  background: #ddd;
+}
+.key.c.natural {
+  left: calc(0 / 8 * 100%);
+}
+.key.d.natural {
+  left: calc((1 / 8) * 100%);
+}
+.key.e.natural {
+  left: calc((2 / 8) * 100%);
+}
+.key.f.natural {
+  left: calc(3 / 8 * 100%);
+}
+.key.g.natural {
+  left: calc(4 / 8 * 100%);
+}
+.key.a.natural {
+  left: calc(5 / 8 * 100%);
+}
+.key.b.natural {
+  left: calc(6 / 8 * 100%);
+}
+.key.c.natural.octave {
+  left: calc(7 / 8 * 100%);
+}
+
+.key.sharp {
+  top: 0;
+  background: #555;
+  border: 3px solid #333;
+  z-index: 1;
+  height: 60%;
+  width: calc(100% / 8 - 30px);
+}
+.key.sharp.pressed {
+  background: #333;
+}
+.key.c.sharp {
+  left: calc(15px + 0.5 / 8 * 100%);
+}
+.key.d.sharp {
+  left: calc(15px + 1.5 / 8 * 100%);
+}
+.key.f.sharp {
+  left: calc(15px + 3.5 / 8 * 100%);
+}
+.key.g.sharp {
+  left: calc(15px + 4.5 / 8 * 100%);
+}
+.key.a.sharp {
+  left: calc(15px + 5.5 / 8 * 100%);
+}
+
+.key span {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.key.sharp span {
+  color: white;
+}
